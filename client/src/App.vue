@@ -9,7 +9,7 @@
 import Calculator from './components/Calculator.vue';
 import List from './components/List.vue';
 import io from 'socket.io-client';
-import app from '../vue.config'
+// import app from '../vue.config'
 
 //  var HttpsProxyAgent = require('https-proxy-agent');
 //  let p = 'https://still-river-21571.herokuapp.com/';
@@ -34,29 +34,30 @@ export default {
     }
   },
   created : async function() {
-    let test = "Hello from created";
-    let temp = [];
 
-    const self = this;
-    console.log("created");
-    console.log(app);
+    // let test = "Hello from created";
+    // let temp = [];
 
-    await this.socket.emit('updatelist' , test);
+    // //const self = this;
+    // console.log("created");
+    // console.log(app);
 
-    this.socket.on("newupdatedlist", async function(message) {
+    // await this.socket.emit('updatelist' , test);
 
-      console.log("Reached client");
-      console.log(message);
+    // this.socket.on("newupdatedlist", async function(message) {
 
-      await self.axios.get("https://still-river-21571.herokuapp.com/calculations/calculations").then( function (response) { 
-        console.log("Get");
-        console.log(response.data);
-        temp = response.data;
-      }).catch(function(error){
-        console.log(error);
-      });
-      self.$refs.list.items = temp;
-      });
+    //   console.log("Reached client");
+    //   console.log(message);
+
+    //   await self.axios.get("https://still-river-21571.herokuapp.com/calculations/calculations").then( function (response) { 
+    //     console.log("Get");
+    //     console.log(response.data);
+    //     temp = response.data;
+    //   }).catch(function(error){
+    //     console.log(error);
+    //   });
+    //   self.$refs.list.items = temp;
+    //   });
   },  
   methods : {
     updateList : async function (value) {
