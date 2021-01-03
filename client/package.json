@@ -7,11 +7,12 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "start": "npm run serve",
-    "heroku-postinstall":"npm install && npm run build"
+    "heroku-postinstall": "npm install && npm run build"
   },
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.4.3",
+    "https-proxy-agent": "^5.0.0",
     "velocity-animate": "^1.5.2",
     "vue": "^2.6.10",
     "vue-axios": "^3.2.0",
@@ -45,6 +46,5 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ],
-  "proxy": "http://localhost:5000"
+  ]
 }

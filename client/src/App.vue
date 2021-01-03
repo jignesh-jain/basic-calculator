@@ -9,6 +9,18 @@
 import Calculator from './components/Calculator.vue';
 import List from './components/List.vue';
 import io from 'socket.io-client';
+import app from '../vue.config'
+
+ var HttpsProxyAgent = require('https-proxy-agent');
+ let p = 'http://my.proxy.address:8080';
+ let agent = new HttpsProxyAgent(p);
+
+ let opts = {
+               secure: true,
+               rejectUnauthorized: false,
+               reconnect: true,
+               agent: agent
+            };
 
 export default {
   name: 'app',
@@ -18,7 +30,7 @@ export default {
   },
   data() {
     return{
-      socket: io('http://localhost:5000', { transport : ['websocket'] }),
+      socket: io("http://localhost:5000",opts, { transport : ['websocket'] }),
     }
   },
   created : async function() {
@@ -27,6 +39,7 @@ export default {
 
     const self = this;
     console.log("created");
+    console.log(app);
 
     await this.socket.emit('updatelist' , test);
 
@@ -35,7 +48,7 @@ export default {
       console.log("Reached client");
       console.log(message);
 
-      await self.axios.get("http://localhost:5000/calculations").then( function (response) { 
+      await self.axios.get("/api/calculations").then( function (response) { 
         console.log("Get");
         console.log(response.data);
         temp = response.data;
@@ -53,7 +66,7 @@ export default {
         // this.$refs.list.items.push(value);
         // this.$refs.list.$forceUpdate();
 
-        await this.axios.post("http://localhost:5000/calculations", {
+        await this.axios.post("/api/calculations", {
           expression : value
         })
         .then(function(response) {
@@ -72,7 +85,7 @@ export default {
           console.log("Reached client");
           console.log(message);
 
-        await self.axios.get("http://localhost:5000/calculations")
+        await self.axios.get("/api/calculations")
         .then( function (response) { 
           console.log("Get");
           console.log(response.data);

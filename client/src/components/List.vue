@@ -17,7 +17,7 @@ export default {
     },
     created : async function() {
         const self = this;
-        await this.axios.get("http://localhost:5000/calculations").then( async function (response) {
+        await this.axios.get("/api/calculations").then( async function (response) {
             console.log(response);
             self.items = response.data;
     })  
