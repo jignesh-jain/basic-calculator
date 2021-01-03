@@ -78,9 +78,9 @@ io.on('connection', (socket) => {
 
   if (process.env.NODE_ENV === "production") {
     // Set Static Folder
-    app.use(express.static("client/build"));
+    app.use(express.static("client/dist"));
     app.get("*", (req, res) => {
-      res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+      res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
     });
   }
 
