@@ -4,6 +4,7 @@ const server = require('http').createServer(app);
 const path = require("path");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const serveStatic = require('serve-static')
 const Calculation = require("./model/Calculation");
 require("dotenv").config();
 const PORT = process.env.PORT || 5000;
