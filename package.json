@@ -1,15 +1,15 @@
 {
   "name": "basic-calculator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Basic Calculator using Socket.io",
   "main": "server.js",
   "scripts": {
-    "client-install": "npm install --prefix client",
+    "client-install": "cd client && npm install",
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm run serve --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=true npm install --prefix client && npm run serve --prefix client"
+    "heroku-postbuild": "npm run client-install && npm run build"
   },
   "author": "Jignesh Jain",
   "license": "MIT",
