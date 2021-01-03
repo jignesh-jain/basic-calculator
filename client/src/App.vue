@@ -11,16 +11,16 @@ import List from './components/List.vue';
 import io from 'socket.io-client';
 import app from '../vue.config'
 
- var HttpsProxyAgent = require('https-proxy-agent');
- let p = 'http://my.proxy.address:8080';
- let agent = new HttpsProxyAgent(p);
+//  var HttpsProxyAgent = require('https-proxy-agent');
+//  let p = 'https://still-river-21571.herokuapp.com/';
+//  let agent = new HttpsProxyAgent(p);
 
- let opts = {
-               secure: true,
-               rejectUnauthorized: false,
-               reconnect: true,
-               agent: agent
-            };
+//  let opts = {
+//                secure: true,
+//                rejectUnauthorized: false,
+//                reconnect: true,
+//                agent: agent
+//             };
 
 export default {
   name: 'app',
@@ -30,7 +30,7 @@ export default {
   },
   data() {
     return{
-      socket: io("http://localhost:5000",opts, { transport : ['websocket'] }),
+      socket: io("https://still-river-21571.herokuapp.com/", { transport : ['websocket'] }),
     }
   },
   created : async function() {
