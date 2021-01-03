@@ -9,18 +9,25 @@
 </template>
 
 <script>
+
+import io from 'socket.io-client';
+
 export default {
     data() {
         return {
-            items : []
+            items : [],
+            socket: io("https://still-river-21571.herokuapp.com", { transport : ['websocket'] }),
         }
     },
     created : async function() {
         const self = this;
-        await this.axios.get("https://still-river-21571.herokuapp.com/calculations").then( async function (response) {
+        this.socket.on("newupdatedlist", async function(message) {
+        console.log(message);
+        await self.axios.get("https://still-river-21571.herokuapp.com/calculations").then( async function (response) {
             console.log(response);
             self.items = response.data;
     })  
+    })
     }
 }
 

@@ -6,9 +6,11 @@
 </template>
 
 <script>
+
 import Calculator from './components/Calculator.vue';
 import List from './components/List.vue';
 import io from 'socket.io-client';
+
 // import app from '../vue.config'
 
 //  var HttpsProxyAgent = require('https-proxy-agent');
@@ -29,20 +31,20 @@ export default {
     List
   },
   data() {
-    return{
+    return {
       socket: io("https://still-river-21571.herokuapp.com", { transport : ['websocket'] }),
     }
   },
   created : async function() {
 
-    // let test = "Hello from created";
+    let test = "Hello from created";
     // let temp = [];
 
     // //const self = this;
     // console.log("created");
     // console.log(app);
 
-    // await this.socket.emit('updatelist' , test);
+    await this.socket.emit('updatelist' , test);
 
     // this.socket.on("newupdatedlist", async function(message) {
 
