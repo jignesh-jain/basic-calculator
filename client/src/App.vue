@@ -30,7 +30,7 @@ export default {
   },
   data() {
     return{
-      socket: io("https://still-river-21571.herokuapp.com/", { transport : ['websocket'] }),
+      socket: io("https://still-river-21571.herokuapp.com", { transport : ['websocket'] }),
     }
   },
   created : async function() {
@@ -48,7 +48,7 @@ export default {
       console.log("Reached client");
       console.log(message);
 
-      await self.axios.get("/api/calculations").then( function (response) { 
+      await self.axios.get("https://still-river-21571.herokuapp.com/calculations/calculations").then( function (response) { 
         console.log("Get");
         console.log(response.data);
         temp = response.data;
@@ -66,7 +66,7 @@ export default {
         // this.$refs.list.items.push(value);
         // this.$refs.list.$forceUpdate();
 
-        await this.axios.post("/api/calculations", {
+        await this.axios.post("https://still-river-21571.herokuapp.com/calculations", {
           expression : value
         })
         .then(function(response) {
@@ -85,7 +85,7 @@ export default {
           console.log("Reached client");
           console.log(message);
 
-        await self.axios.get("/api/calculations")
+        await self.axios.get("https://still-river-21571.herokuapp.com/calculations")
         .then( function (response) { 
           console.log("Get");
           console.log(response.data);
