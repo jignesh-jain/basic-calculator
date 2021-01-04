@@ -8,7 +8,7 @@ Designed and created a web app which logs calculations as they happen and shares
 
 <strong> https://still-river-21571.herokuapp.com/ </strong>
 
-### Tech Stack
+### Technologies used
 
 * #### Front-end
 
