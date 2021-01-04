@@ -32,7 +32,7 @@ Designed and created a web app which logs calculations as they happen and shares
 
   * Heroku
 
-* #### Screenshot of the app
+### Screenshot of the app
   
  ![image](https://user-images.githubusercontent.com/54049200/103589632-b39bd400-4ea0-11eb-967b-4ca5dbc519a8.png)
 
