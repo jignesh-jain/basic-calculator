@@ -1,36 +1,39 @@
 <template>
+  <div>
     <div>
-        <ul>
-            <li id ="listWrapper" v-for=" item in items" :key="item.index">
-                {{ item.expression }}
-            </li>
-        </ul>
+      <p>Recent 10 Calculations</p>
     </div>
+    <div>
+      <ul>
+        <li id="listWrapper" v-for=" item in items" :key="item.index">{{ item.expression }}</li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script>
-
-import io from 'socket.io-client';
+import io from "socket.io-client";
 
 export default {
-    data() {
-        return {
-            items : [],
-            socket: io("https://still-river-21571.herokuapp.com", { transport : ['websocket'] }),
-        }
-    },
-    created : async function() {
-        const self = this;
-        this.socket.on("newupdatedlist", async function(message) {
-        console.log(message);
-        await self.axios.get("https://still-river-21571.herokuapp.com/calculations").then( async function (response) {
-            console.log(response);
-            self.items = response.data;
-    })  
-    })
-    }
-}
-
+  data() {
+    return {
+      items: [],
+      socket: io("https://still-river-21571.herokuapp.com", {
+        transport: ["websocket"]
+      })
+    };
+  },
+  created: async function() {
+    const self = this;
+    this.socket.on("newupdatedlist", async function() {
+      await self.axios
+        .get("https://still-river-21571.herokuapp.com/calculations")
+        .then(async function(response) {
+          self.items = response.data;
+        });
+    });
+  }
+};
 </script>
 
 <style>
@@ -47,6 +50,15 @@ export default {
   overflow: hidden;
   box-shadow: 5px 5px 5px #4b4b4c;
   float: center;
-  font: bold;
+  font-weight: bold;
+  background: lightcyan;
+  border-color: black;
+  border: double;
+}
+p {
+  font-weight: bold;
+  font-size: 2em;
+  font-style: italic;
+  text-decoration: underline;
 }
 </style>

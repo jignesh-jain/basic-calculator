@@ -330,12 +330,14 @@ export default {
   overflow: hidden;
   box-shadow: 5px 5px 5px #4b4b4c;
   float: left;
+  overflow:scroll;
 }
 
 @media screen and (min-width: 768px){
     #calcWrapper {
         width: 40%;
         height: 700px;
+        overflow:scroll;
     }
 }
 </style>

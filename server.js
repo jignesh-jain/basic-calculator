@@ -31,7 +31,6 @@ app.use(cors());
 
 // Stattic Folder Middleware
 
-
 // Get Recent 10 Calculations
 
 app.get("/calculations", (req, res) => {
@@ -68,21 +67,20 @@ app.post("/calculations", (req, res) => {
 });
 
 io.on('connection', (socket) => {
-   console.log("Connected to a user");
-   let messageServer = "Hello from Server";
-   socket.on('updatelist' , (msg) => {
-     console.log(msg);
+  console.log("Connected to a user");
+  let messageServer = "Hello from Server";
+  socket.on('updatelist' , () => {
     io.emit('newupdatedlist',messageServer)
    })
-  });
+});
 
-  if (process.env.NODE_ENV === "production") {
-    // Set Static Folder
-    app.use(express.static("client/dist"));
-    app.get("*", (req, res) => {
-      res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
-    });
-  }
+if (process.env.NODE_ENV === "production") {
+  // Set Static Folder
+  app.use(express.static("client/dist"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
+  });
+}
 
 server.listen(PORT, () => {
   console.log(`Listening on Port: ${PORT}`);

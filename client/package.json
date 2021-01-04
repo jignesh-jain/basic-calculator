@@ -9,6 +9,8 @@
     "start": "npm run serve",
     "heroku-postinstall": "npm install && npm run build"
   },
+  "author": "Jignesh Jain",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.4.3",
@@ -37,7 +39,8 @@
       "eslint:recommended"
     ],
     "rules": {
-      "no-console": "off"
+      "no-console": "off",
+      "no-unused-vars": "off" 
     },
     "parserOptions": {
       "parser": "babel-eslint"
