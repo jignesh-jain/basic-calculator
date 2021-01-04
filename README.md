@@ -1,8 +1,7 @@
 # Basic Calculator using Web SocketIO
 
 Designed and created a web app which logs calculations as they happen and shares those calculations with everyone connected to the app.
-
-The web app updates real-time calculations and displays a list of 10 recent calculations done by any user
+The web app updates real-time calculations and displays a list of 10 recent calculations done by any user connected to the app.
 
 ### Live Link to the deployed application
 
