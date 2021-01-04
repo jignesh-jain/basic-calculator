@@ -38,6 +38,5 @@ Designed and created a web app which logs calculations as they happen and shares
 
 ### Demonstartion video of the application.
 
-
-https://user-images.githubusercontent.com/54049200/103590971-ab916380-4ea3-11eb-8904-3db128d23b6c.mov
+![Screen-Recording-2021-01-04-at-3](https://user-images.githubusercontent.com/54049200/103591269-7fc2ad80-4ea4-11eb-826a-73a660ec5924.gif)
 
