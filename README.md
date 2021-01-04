@@ -10,7 +10,7 @@ Designed and created a web app which logs calculations as they happen and shares
 
 ### Technologies used
 
-* Front-end
+* #### Front-end
 
   * HTML
   * CSS
