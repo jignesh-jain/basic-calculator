@@ -31,3 +31,5 @@ Designed and created a web app which logs calculations as they happen and shares
 * #### Deployment
 
   * Heroku
+  
+  https://github.com/jignesh-jain/basic-calculator/issues/1
