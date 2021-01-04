@@ -23,6 +23,8 @@ export default {
           prevValue: "0",
           prevOp: "=",
           listval:"",
+          op1:"",
+          op2:"",
           opInEffect: false,
           bStyleObjectRegular:{
               width: '25%'
@@ -266,6 +268,8 @@ export default {
           let op2_num = parseFloat(op2);
           this.listval += op2_num;
           let result = 0;
+          this.op1 = op1_num;
+          this.op2 = op2_num;
           if (op === "+"){
               result = op1_num + op2_num;
           }
@@ -289,7 +293,7 @@ export default {
           }
           var temp = result.toString();
           if (temp.length > 15) {
-              result = Number(temp).toFixed(2);
+              result = Number(temp).toFixed(4);
               temp = result;
           }   
           this.listval += "=";
@@ -311,7 +315,10 @@ export default {
       callApp : function () {
            let temp = this.listval;
            this.listval = "";
-           if (this.prevOp === "=") {
+           if ( (this.op1 != "" && this.op2 != "")) {
+                this.op1 = "";
+                this.op2 = "";
+                console.log(temp);
                 this.$emit('clickedEqualTo' , temp);
           }
       }

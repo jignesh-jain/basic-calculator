@@ -30,6 +30,8 @@ export default {
     updateList: async function(value) {
       let temp = [];
       const self = this;
+      console.log("updateList");
+      console.log(value);
       if (value != "") {
         await this.axios
           .post("https://still-river-21571.herokuapp.com/calculations", {
