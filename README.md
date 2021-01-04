@@ -10,26 +10,26 @@ Designed and created a web app which logs calculations as they happen and shares
 
 ### Technologies used
 
-#### **Front-end
+#### * Front-end
 
 * HTML
 * CSS
 * JavaScript
 * Vue
 
-#### Back-end
+#### * Back-end
 
 * Express
 * Node.js
 
-#### Database
+#### * Database
 
 * MongoDB Atlas
 
-#### WebSocket
+#### * WebSocket
 
 * Socket.io
 
-#### Deployment
+#### * Deployment
 
 * Heroku
