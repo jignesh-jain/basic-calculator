@@ -287,12 +287,13 @@ export default {
           else{
               result = op2_num;
           }
-          let temp = result.toString();
-          if (temp.length >= 15){
-              throw "DISPLAY ERROR: Computation result will not fit on display. Use C or AC to perform a simpler computation.";
-          }
+          var temp = result.toString();
+          if (temp.length > 15) {
+              result = Number(temp).toFixed(2);
+              temp = result;
+          }   
           this.listval += "=";
-          this.listval += result;   
+          this.listval +=  result.toString();
           this.dispValue = temp;
           this.prevValue = "0";
           this.prevOp = "=";
