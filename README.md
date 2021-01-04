@@ -12,10 +12,10 @@ Designed and created a web app which logs calculations as they happen and shares
 
 #### Front-end
 
-*HTML
-*CSS
-*JavaScript
-*Vue
+* HTML
+* CSS
+* JavaScript
+* Vue
 
 #### Back-end
 
