@@ -19,17 +19,17 @@ Designed and created a web app which logs calculations as they happen and shares
 
 * #### Back-end
 
-* Express
-* Node.js
+  * Express
+  * Node.js
 
 * #### Database
 
-* MongoDB Atlas
+  * MongoDB Atlas
 
 * #### WebSocket
 
-* Socket.io
+  * Socket.io
 
 * #### Deployment
 
-* Heroku
+  * Heroku
