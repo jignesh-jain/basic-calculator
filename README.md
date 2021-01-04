@@ -4,7 +4,7 @@
 
 Designed and created a web app which logs calculations as they happen and shares those calculations with everyone connected to the app.
 
-### Link to Deployed application
+### Link to the Deployed application
 
 <strong> https://still-river-21571.herokuapp.com/ </strong>
 
